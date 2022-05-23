@@ -1,0 +1,30 @@
+version: '3.2'
+
+networks:
+  antonbin:
+    external: true
+
+services:
+
+#  backend service
+  backend:
+    build:
+      context: .
+      dockerfile: Docker/backend/Dockerfile
+    container_name: antonbin-backend
+    networks:
+      - antonbin
+    ports:
+      - "8000:8000"
+
+
+  #  frontend service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../Docker/frontend/Dockerfile
+    container_name: antonbin-frontend
+    networks:
+      - antonbin
+    ports:
+      - "3000:3000"

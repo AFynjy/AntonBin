@@ -10,6 +10,6 @@ RUN pip wheel . -w .wheels --no-deps
 
 RUN pip install .wheels/Paket_AntonBin-*
 
-EXPOSE $PORT
+EXPOSE 8000
 
 CMD ["python3", "backend/website/__main__.py"]
