@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Cookies from "js-cookie";
 
 const LoginPage = () => {
 
@@ -14,6 +15,7 @@ const LoginPage = () => {
         })
             .then((resp) => {
                 if (resp.status === 200) {
+                    console.log(Cookies)
                     console.log("ok")
                 } else if (resp.status === 201) {
                     console.log("Логина нет")
@@ -58,7 +60,7 @@ const LoginPage = () => {
                             />
                         </div>
                         <div className="button">
-                            <button className="btn #2b2b2b white-text" type="submit">
+                            <button id="log_in" className="btn #2b2b2b white-text" type="submit">
                                 LOGIN
                             </button>
                         </div>

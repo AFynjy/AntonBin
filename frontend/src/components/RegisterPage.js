@@ -18,7 +18,7 @@ const RegisterPage = () => {
         })
             .then((resp) => {
                 if (resp.status === 200) {
-                    console.log("Ok");
+                    document.location('/')
                 } else {
                     alert("Ошибка");
                 }

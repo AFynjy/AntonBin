@@ -1,7 +1,7 @@
 import uvicorn
-import backend.website
+import website
 port = 8000
 
-app = backend.website.Application()
+app = website.Application()
 
 uvicorn.run(app, port=port)

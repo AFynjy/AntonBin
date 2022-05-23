@@ -2,8 +2,12 @@ import React from "react";
 import PostForm from "./PostForm";
 import { Col, Container, Row } from "react-bootstrap";
 import PostList from "./PostList";
+// @ts-ignore
+import Cookies from "js-cookie";
 
 const HomePage: React.FunctionComponent = () => {
+
+  console.log(Cookies)
 
   return (
     <>

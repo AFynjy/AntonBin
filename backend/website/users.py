@@ -24,7 +24,9 @@ class Login(HTTPEndpoint):
         data_forms_reg = await request.form()
         login = data_forms_reg.get("login")
         if login in users.keys():
-            return Response(status_code=200)
+            response = Response(status_code=200)
+            response.set_cookie('auth', login, 300)
+            return response
         else:
             return Response(status_code=201)
 
